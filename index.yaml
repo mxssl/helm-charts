@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  selectel-billing-exporter:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-18T03:24:59.172022224Z"
+    description: A Helm chart for Kubernetes
+    digest: 3fa2d3ce850c9d7cab900cfa7a28d12b9e7e9331a3fca72c9b7e5f52118e2153
+    name: selectel-billing-exporter
+    type: application
+    urls:
+    - https://github.com/mxssl/helm-charts/releases/download/selectel-billing-exporter-0.1.1/selectel-billing-exporter-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-04-18T03:24:59.028354679Z"
