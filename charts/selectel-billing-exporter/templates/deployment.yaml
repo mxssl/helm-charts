@@ -1,16 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "selectel_billing_exporter.fullname" . }}
+  name: {{ include "selectel-billing-exporter.fullname" . }}
   labels:
-    {{- include "selectel_billing_exporter.labels" . | nindent 4 }}
+    {{- include "selectel-billing-exporter.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
-      {{- include "selectel_billing_exporter.selectorLabels" . | nindent 6 }}
+      {{- include "selectel-billing-exporter.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +16,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "selectel_billing_exporter.selectorLabels" . | nindent 8 }}
+        {{- include "selectel-billing-exporter.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "selectel_billing_exporter.serviceAccountName" . }}
+      serviceAccountName: {{ include "selectel-billing-exporter.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
