@@ -7,9 +7,9 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: 80
       targetPort: http
       protocol: TCP
-      name: http
+      name: metrics
   selector:
     {{- include "selectel-billing-exporter.selectorLabels" . | nindent 4 }}

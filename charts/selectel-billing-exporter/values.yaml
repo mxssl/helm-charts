@@ -1,5 +1,9 @@
 replicaCount: 1
 
+# Selectel token
+# Docs: https://my.selectel.ru/profile/apikeys
+token: ""
+
 image:
   repository: mxssl/selectel_billing_exporter
   pullPolicy: IfNotPresent
@@ -25,23 +29,11 @@ service:
   port: 80
 
 metrics:
-  enabled: false
+  enabled: true
   serviceMonitor:
     additionalLabels: {}
-    interval: 30s
+    interval: 60s
     scrapeTimeout: {}
-
-ingress:
-  enabled: false
-  annotations: {}
-  hosts:
-    - host: chart-example.local
-      paths:
-      - path: /
-        backend:
-          serviceName: chart-example.local
-          servicePort: 80
-  tls: []
 
 resources:
   limits:
