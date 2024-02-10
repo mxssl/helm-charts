@@ -10,6 +10,6 @@ helm upgrade \
   --create-namespace \
   --namespace selectel-billing-exporter \
   --set token="" \
-  --version 1.0.2
+  --version 1.0.3 \
   mxssl/selectel-billing-exporter
 ```

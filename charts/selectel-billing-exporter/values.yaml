@@ -5,9 +5,9 @@ replicaCount: 1
 token: ""
 
 image:
-  repository: mxssl/selectel_billing_exporter
+  repository: mxssl/selectel-billing-exporter
   pullPolicy: IfNotPresent
-  tag: "1.0.0"
+  tag: "1.1.3"
 
 imagePullSecrets: []
 nameOverride: ""
